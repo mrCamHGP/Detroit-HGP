@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LandmarkRowView: View {
     
+    
     var landmark : Landmark
     var body: some View {
         HStack{
@@ -19,14 +20,21 @@ struct LandmarkRowView: View {
             Text(landmark.name)
             
             Spacer()
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow)
+            }
+               
         }// End of HStack
     }
 }
 
-#Preview() {
-    LandmarkRowView(landmark: landmarks[0])
-    LandmarkRowView(landmark: landmarks[1])
+#Preview {
+    Group {
+        LandmarkRowView(landmark: landmarks[0])
+        LandmarkRowView(landmark: landmarks[1])
+    }
 }
-
 
 
