@@ -19,6 +19,12 @@ struct LandmarkRowView: View {
             Text(landmark.name)
             
             Spacer()
+            
+            if landmark.isFavoriate {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow)
+            }
+               
         }// End of HStack
     }
 }
